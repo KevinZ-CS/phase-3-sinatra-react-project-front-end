@@ -39,8 +39,12 @@ function CategoryList() {
           }
 
 
+          function handleDeleteCategory(id) {
+            const updatedCategories = categories.filter((category) => category.id !== id);
+            setCategories(updatedCategories);
+          }
 
-
+        
 return (
     <Container className="py-4">
         <Row>
