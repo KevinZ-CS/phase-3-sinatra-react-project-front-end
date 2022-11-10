@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom';
 
 function EachCategory({ category, onDeleteCategory }) {
 
+    function handleDeleteClick() {
+        fetch(`http://localhost:9292/${category.id}`, {
+            method: "DELETE",
+          });
 
+          onDeleteCategory(category.id)
+    }
 
 
     return (
