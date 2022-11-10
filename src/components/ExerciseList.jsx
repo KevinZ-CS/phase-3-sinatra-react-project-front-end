@@ -14,7 +14,13 @@ function ExerciseList() {
     const [reps, setReps] = useState('');
     const { category, id } = useParams();
 
-    
+    useEffect(() => {
+        fetch(`http://localhost:9292/${id}`)
+        .then((r) => r.json())
+        .then((data) => setWorkouts(data))
+        },[]);
+  
+
 
 
 
