@@ -51,7 +51,13 @@ function ExerciseList() {
             setWorkouts([...workouts, newWorkout]);
           }
 
-          
+
+          function handleDeleteWorkout(id) {
+            const updatedWorkout = workouts.filter((workout) => workout.id !== id);
+            setWorkouts(updatedWorkout);
+          }
+
+
 
 
       
