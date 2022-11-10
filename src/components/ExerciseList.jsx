@@ -69,14 +69,6 @@ function ExerciseList() {
           }
 
 
-
-
-      
-  
-
-
-
-
     return (
      
     <Container className="py-4">
