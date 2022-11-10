@@ -6,6 +6,16 @@ import { useState } from "react";
 
 function Exercise({ workout, onWorkoutDelete, onUpdateCheck }) {
 
+    const [check, setCheck] = useState(workout.complete)
+
+    function handleDeleteClick() {
+        fetch(`http://localhost:9292/exercise/${workout.id}`, {
+            method: "DELETE",
+          });
+
+        onWorkoutDelete(workout.id)
+    }
+
 
 
 return (
