@@ -5,6 +5,10 @@ import EachCategory from "./EachCategory";
 
 function CategoryList() {
 
+    const [categories, setCategories] = useState([]);
+    const [newCategory, setNewCategory] = useState('');
+
+
 return (
     <Container className="py-4">
         <Row>
