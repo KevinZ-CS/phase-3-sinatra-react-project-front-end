@@ -14,6 +14,10 @@ function CategoryList() {
         .then((data) => setCategories(data))
         },[]);
 
+    function handleAddCategory(newCategory) {
+        setCategories([...categories, newCategory]);
+          }
+
 
 
 
