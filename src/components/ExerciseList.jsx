@@ -19,6 +19,34 @@ function ExerciseList() {
         .then((r) => r.json())
         .then((data) => setWorkouts(data))
         },[]);
+
+
+        function handleSubmitTask(e) {
+            e.preventDefault();
+        
+            fetch(`http://localhost:9292/${category}`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                exercise: exercise,
+                weight: weight,
+                sets: sets,
+                reps: reps,
+                category_id: id,
+              }),
+            })
+              .then((r) => r.json())
+              .then((newWorkout) => {
+                setExercise('')
+                setWeight('')
+                setSets('')
+                setReps('')
+                handleAddWorkout(newWorkout)
+              });
+          }
+      
   
 
 
