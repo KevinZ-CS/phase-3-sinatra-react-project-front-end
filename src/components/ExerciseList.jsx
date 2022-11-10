@@ -57,6 +57,17 @@ function ExerciseList() {
             setWorkouts(updatedWorkout);
           }
 
+          function handleUpdateWorkout(updatedWorkoutObj) {
+            const updatedWorkouts = workouts.map((w) => {
+              if (w.id === updatedWorkoutObj.id) {
+                return updatedWorkoutObj;
+              } else {
+                return w;
+              }
+            });
+            setWorkouts(updatedWorkouts);
+          }
+
 
 
 
