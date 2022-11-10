@@ -8,6 +8,14 @@ function CategoryList() {
     const [categories, setCategories] = useState([]);
     const [newCategory, setNewCategory] = useState('');
 
+    useEffect(() => {
+        fetch("http://localhost:9292/")
+        .then((r) => r.json())
+        .then((data) => setCategories(data))
+        },[]);
+
+
+
 
 return (
     <Container className="py-4">
