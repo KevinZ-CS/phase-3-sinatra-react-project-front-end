@@ -19,6 +19,26 @@ function CategoryList() {
           }
 
 
+        function handleSubmitCategory(e) {
+            e.preventDefault();
+        
+            fetch("http://localhost:9292/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                category: newCategory,
+              }),
+            })
+              .then((r) => r.json())
+              .then((newCategory) => {
+                handleAddCategory(newCategory)
+                setNewCategory('')
+              });
+          }
+
+
 
 
 return (
