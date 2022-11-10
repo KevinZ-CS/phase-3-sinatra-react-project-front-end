@@ -16,6 +16,25 @@ function Exercise({ workout, onWorkoutDelete, onUpdateCheck }) {
         onWorkoutDelete(workout.id)
     }
 
+    function handleCheckChange(e) {
+        e.preventDefault();
+        fetch(`http://localhost:9292/exercise/${workout.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            complete: !check,
+          }),
+        })
+          .then((r) => r.json())
+          .then((check) => {
+            setCheck(check.complete)
+            onUpdateCheck(check)
+          }
+          );
+      }
+
 
 
 return (
