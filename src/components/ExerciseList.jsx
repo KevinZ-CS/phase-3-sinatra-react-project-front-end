@@ -46,6 +46,14 @@ function ExerciseList() {
                 handleAddWorkout(newWorkout)
               });
           }
+
+          function handleAddWorkout(newWorkout) {
+            setWorkouts([...workouts, newWorkout]);
+          }
+
+          
+
+
       
   
 
