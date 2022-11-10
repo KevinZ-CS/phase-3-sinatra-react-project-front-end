@@ -7,6 +7,15 @@ import Exercise from "./Exercise";
 
 function ExerciseList() {
 
+    const [workouts, setWorkouts] = useState([]);
+    const [exercise, setExercise] = useState('');
+    const [weight, setWeight] = useState('');
+    const [sets, setSets] = useState('');
+    const [reps, setReps] = useState('');
+    const { category, id } = useParams();
+
+    
+
 
 
     return (
